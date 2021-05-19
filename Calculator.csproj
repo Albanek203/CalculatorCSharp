@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC92388B-687C-4D74-AFD5-6AB50B02ADE6}</ProjectGuid>
+    <ProjectGuid>{59C94986-E893-4D0F-8EC0-61C86890B91D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Calculator</RootNamespace>
     <AssemblyName>Calculator</AssemblyName>
@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs">
+    <Compile Include="BinaryCalculatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About.Designer.cs">
-      <DependentUpon>About.cs</DependentUpon>
+    <Compile Include="BinaryCalculatorForm.Designer.cs">
+      <DependentUpon>BinaryCalculatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryOperationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BinaryOperationForm.Designer.cs">
+      <DependentUpon>BinaryOperationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertForm.Designer.cs">
+      <DependentUpon>ConvertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalForm.cs">
       <SubType>Form</SubType>
@@ -58,22 +70,36 @@
     <Compile Include="GlobalForm.Designer.cs">
       <DependentUpon>GlobalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="IBinConvertor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="TypeConvertions.cs" />
+    <Compile Include="BinConvertor.cs" />
+    <Compile Include="TypeBinaryCalculator.cs" />
+    <Compile Include="Types.cs" />
+    <Compile Include="TypesBinary.cs" />
+    <Compile Include="TypesOrder.cs" />
+    <Compile Include="TypeConvert.cs" />
+    <EmbeddedResource Include="BinaryCalculatorForm.resx">
+      <DependentUpon>BinaryCalculatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BinaryOperationForm.resx">
+      <DependentUpon>BinaryOperationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConvertForm.resx">
+      <DependentUpon>ConvertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GlobalForm.resx">
       <DependentUpon>GlobalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,9 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="images\butClose.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

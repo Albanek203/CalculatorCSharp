@@ -13,7 +13,7 @@ namespace Calculator {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Calculators());
+            Application.Run(new GlobalForm());
         }
     }
 }
